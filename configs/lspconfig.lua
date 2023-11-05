@@ -17,3 +17,10 @@ lspconfig.gopls.setup {
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
 }
+
+lspconfig.pyright.setup {
+  on_attach = base.on_attach,
+  capabilities = base.capabilities,
+  filetypes = {"python"},
+}
+

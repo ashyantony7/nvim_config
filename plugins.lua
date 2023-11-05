@@ -28,6 +28,10 @@ local plugins = {
       ensure_installed = {
         "codelldb",
         "gopls",
+        "pyright",
+        "mypy",
+        "black",
+        "isort",
       },
     }
   },
@@ -37,6 +41,17 @@ local plugins = {
     opts = function()
       return require "custom.configs.null-ls"
     end,
+  },
+  {
+    "linux-cultist/venv-selector.nvim",
+    opts = {
+      name = "env",
+    },
+	  event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+	  keys = {{
+		  "<leader>vs", "<cmd>:VenvSelect<cr>",
+	  	"<leader>vc", "<cmd>:VenvSelectCached<cr>"
+    }}
   },
   {
     "rust-lang/rust.vim",
