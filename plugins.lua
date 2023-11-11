@@ -10,6 +10,12 @@ local plugins = {
     "tpope/vim-commentary",
   },
   {
+    "lewis6991/gitsigns.nvim",
+    init = function()
+      require("gitsigns").setup()
+    end,
+  },
+  {
     "pocco81/auto-save.nvim",
     init = function ()
       require("auto-save").setup()
@@ -30,13 +36,14 @@ local plugins = {
         "gopls",
         "pyright",
         "mypy",
+        "ruff",
         "black",
         "isort",
       },
     }
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
